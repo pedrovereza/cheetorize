@@ -7,7 +7,13 @@ var cheetorize = (function () {
     }
 
     function cheetorize(original) {
-		return addFakeTypoTo(original);
+        var words = original.split(' ');
+
+        for (var i = 0; i < words.length; i++) {
+            words[i] = addFakeTypoTo(words[i]);
+        }
+
+        return words.join(' ');
     }
 
     function laughAsCheeto(laughLength){
