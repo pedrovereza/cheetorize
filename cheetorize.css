@@ -1,0 +1,39 @@
+main {
+  max-width: 45em;
+  margin: 0 auto;
+}
+
+textarea {
+  background-color: #e0e0e0;
+  border: 0;
+  border-radius: .3em;
+  font-family: sans-serif;
+  height: 7em;
+  margin: .7em 0;
+  padding: .5em;
+  width: 75%;
+}
+
+button {
+  background-color: #e0e0e0;
+  border: 0;
+  border-radius: .3em;
+  line-height: 3.5em;
+  width: 18%;
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-150%);
+}
+
+footer {
+  color: #e0e0e0;
+  font-size: 80%;
+  margin: 0 auto;
+  max-width: 45em;
+  text-align: center;
+}
+
+footer a {
+  color: #d0d0d0;
+}

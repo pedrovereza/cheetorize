@@ -1,25 +1,37 @@
-var laughSymbols = [ "a", "e", "i", "o", "u", "h"];
+var cheetorize = (function () {
 
+    var laughSymbols = [ "a", "e", "i", "o", "u", "h"];
 
-function cheetorize(original) {
-	var length = Math.floor(Math.random() * 140);
+    function cheetorize(original) {
+	    var length = Math.floor(Math.random() * 140);
 
-	return  laughAsCheeto(length);
-}
+	    return  laughAsCheeto(length);
+    }
 
-function laughAsCheeto(laughLength){
-	var laugh = "";
+    function laughAsCheeto(laughLength){
+	    var laugh = "";
 
-	for (var i = 0; i < laughLength; i++){
-		var symbol  = laughSymbols[Math.floor(Math.random() * laughSymbols.length)];
+	    for (var i = 0; i < laughLength; i++){
+		    var symbol  = laughSymbols[Math.floor(Math.random() * laughSymbols.length)];
 
-		if (Math.random() > 0.5) {
-			symbol = symbol.toUpperCase();
-		}
+            if (Math.random() > 0.5) {
+                symbol = symbol.toUpperCase();
+            }
 
-		laugh += symbol;
-	}
+		    laugh += symbol;
+	    }
 
-	return laugh;
-}
+	    return laugh;
+    }
 
+    function convert(source, target) {
+        var original = document.getElementById(source);
+        var cheetorized = document.getElementById(target);
+
+        cheetorized.value = cheetorize(original.value);
+    }
+
+    return {
+        convert: convert
+    }
+}());
