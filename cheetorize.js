@@ -6,11 +6,16 @@ var cheetorize = (function () {
         return str.substr(0,index) + chr + str.substr(index+1);
     }
 
+    function shouldAddFakeTypo(current, next) {
+        return (current.length + next.length) % 2 == 0;
+    }
+
     function cheetorize(original) {
         var words = original.split(' ');
 
         for (var i = 0; i < words.length; i++) {
-            words[i] = addFakeTypoTo(words[i]);
+            if (shouldAddFakeTypo(words[i], words[(i+1) % words.length]))
+                words[i] = addFakeTypoTo(words[i]);
         }
 
         return words.join(' ');

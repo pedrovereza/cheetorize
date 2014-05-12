@@ -24,6 +24,11 @@ test("transposes the two chars after the middle in words with even length", func
         equal(cheetorize.cheetorize("pipoca"), "pipcoa");
         equal(cheetorize.cheetorize("computador"), "compuatdor");
 });
+
+test("uses the current and the next word to decide if there'll be typos", function () {
+        equal(cheetorize.cheetorize("arma pipoca"), "aram pipcoa");
+        equal(cheetorize.cheetorize("arma filho"), "arma filho");
+});
 </script>
 </head>
 <body>
