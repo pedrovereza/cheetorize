@@ -3,9 +3,7 @@ var cheetorize = (function () {
     var laughSymbols = [ "a", "e", "i", "o", "u", "h", "s"];
 
     function cheetorize(original) {
-	    var length = Math.floor(Math.random() * 140);
-
-	    return  laughAsCheeto(length);
+		return addFakeTypoTo(original);
     }
 
     function laughAsCheeto(laughLength){
@@ -24,6 +22,13 @@ var cheetorize = (function () {
 	    return laugh;
     }
 
+	function addFakeTypoTo(word) {
+		if (word.length < 3)
+			return word;
+
+		return word;
+	}
+
     function convert(source, target) {
         var original = document.getElementById(source);
         var cheetorized = document.getElementById(target);
@@ -32,6 +37,7 @@ var cheetorize = (function () {
     }
 
     return {
-        convert: convert
+        convert: convert,
+		cheetorize: cheetorize
     }
 }());
