@@ -12,6 +12,12 @@
 test("does not fake a typo for words that have less than 3 characters", function() {
 		equal(cheetorize.cheetorize("oi"), "oi");
 		});
+
+test("uses the central char as pivot in words with odd length", function () {
+        equal(cheetorize.cheetorize("filho"), "fhlio");
+        equal(cheetorize.cheetorize("video"), "vedio");
+        equal(cheetorize.cheetorize("teclado"), "tealcdo");
+});
 </script>
 </head>
 <body>
