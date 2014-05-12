@@ -18,6 +18,12 @@ test("uses the central char as pivot in words with odd length", function () {
         equal(cheetorize.cheetorize("video"), "vedio");
         equal(cheetorize.cheetorize("teclado"), "tealcdo");
 });
+
+test("transposes the two chars after the middle in words with even length", function () {
+        equal(cheetorize.cheetorize("arma"), "aram");
+        equal(cheetorize.cheetorize("pipoca"), "pipcoa");
+        equal(cheetorize.cheetorize("computador"), "compuatdor");
+});
 </script>
 </head>
 <body>

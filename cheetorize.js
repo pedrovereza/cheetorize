@@ -31,10 +31,15 @@ var cheetorize = (function () {
 			return word;
 
         if (word.length % 2 != 0) {
-            var mid = (word.length-1) / 2;
+            var mid = (word.length-1) / 2;   // js doesn't round int division.
             var tmp = word[mid+1];
             word = setCharAt(word, mid+1, word[mid-1]);
             word = setCharAt(word, mid-1, tmp);
+        } else {
+            var mid = word.length / 2;
+            var tmp = word[mid+1];
+            word = setCharAt(word, mid+1, word[mid]);
+            word = setCharAt(word, mid, tmp);
         }
 
 		return word;
