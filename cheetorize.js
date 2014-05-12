@@ -1,6 +1,6 @@
 var cheetorize = (function () {
 
-    var laughSymbols = [ "a", "e", "i", "o", "u", "h"];
+    var laughSymbols = [ "a", "e", "i", "o", "u", "h", "s"];
 
     function cheetorize(original) {
 	    var length = Math.floor(Math.random() * 140);
