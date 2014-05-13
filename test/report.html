@@ -9,6 +9,14 @@
 <script src="../cheetorize.js"></script>
 
 <script>
+
+var laughIdentifier = new RegExp("^[h|H|a|A|e|E|i|I|o|O|u|U|s|S]+$");
+
+QUnit.assert.isCheetoLaugh = function (input) {
+	var actual = laughIdentifier.test(input);
+	QUnit.push(actual, actual, input, "Not a cheeto laugh");
+}
+
 test("does not fake a typo for words that have less than 3 characters", function() {
 		equal(cheetorize.cheetorize("oi"), "oi");
 		});
@@ -28,6 +36,13 @@ test("transposes the two chars after the middle in words with even length", func
 test("uses the current and the next word to decide if there'll be typos", function () {
         equal(cheetorize.cheetorize("arma pipoca"), "aram pipcoa");
         equal(cheetorize.cheetorize("arma filho"), "arma filho");
+});
+test("changes normal laughs to CheetoLaughs", function (assert) {
+		assert.isCheetoLaugh(cheetorize.cheetorize("kkkkk"));
+		assert.isCheetoLaugh(cheetorize.cheetorize("hahaha"));
+		assert.isCheetoLaugh(cheetorize.cheetorize("rs"));
+		assert.isCheetoLaugh(cheetorize.cheetorize("rsrs"));
+		assert.isCheetoLaugh(cheetorize.cheetorize("rssrsrsrrs"));
 });
 </script>
 </head>

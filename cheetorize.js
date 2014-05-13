@@ -1,5 +1,7 @@
 var cheetorize = (function () {
 
+	var laughIdentifier = new RegExp("^((rs|sr)(r|s)*)|(k|K){3,}|(h|H|(a|A|e|E)){4,}$");
+
     var laughSymbols = [ "a", "e", "i", "o", "u", "h", "s"];
 
     function setCharAt(str, index, chr) {
@@ -10,16 +12,19 @@ var cheetorize = (function () {
         return (current.length + next.length) % 2 == 0;
     }
 
-    function cheetorize(original) {
-        var words = original.split(' ');
+	function cheetorize(original) {
+		var words = original.split(' ');
 
-        for (var i = 0; i < words.length; i++) {
-            if (shouldAddFakeTypo(words[i], words[(i+1) % words.length]))
-                words[i] = addFakeTypoTo(words[i]);
-        }
+		for (var i = 0; i < words.length; i++) {
+			if (shouldAddFakeTypo(words[i], words[(i+1) % words.length]))
+				words[i] = addFakeTypoTo(words[i]);
 
-        return words.join(' ');
-    }
+			if(isLaugh(words[i]))
+				words[i] = laughAsCheeto(words[i].length * 2);
+		}
+
+		return words.join(' ');
+	}
 
     function laughAsCheeto(laughLength){
 	    var laugh = "";
@@ -38,7 +43,7 @@ var cheetorize = (function () {
     }
 
 	function addFakeTypoTo(word) {
-		if (word.length < 3)
+		if (word.length < 3 || isLaugh(word))
 			return word;
 
         if (word.length % 2 != 0) {
@@ -54,6 +59,10 @@ var cheetorize = (function () {
         }
 
 		return word;
+	}
+
+	function isLaugh(word){
+		return laughIdentifier.test(word);
 	}
 
     function convert(source, target) {
