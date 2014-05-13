@@ -72,8 +72,16 @@ var cheetorize = (function () {
 		cheetorized.value = cheetorize(original.value);
 	}
 
+	function tweet(source) {
+		var baseUrl = "https://twitter.com/home/?status=";
+		var text = document.getElementById(source).value;
+
+		window.open(baseUrl + encodeURI(text), '_blank');
+	}
+
 	return {
 		convert: convert,
-		cheetorize: cheetorize
+		cheetorize: cheetorize,
+		tweet: tweet
 	}
 }());

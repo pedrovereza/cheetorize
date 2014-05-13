@@ -1,3 +1,7 @@
+body {
+  font-family: sans-serif;
+}
+
 main {
   max-width: 45em;
   margin: 0 auto;
@@ -24,6 +28,10 @@ button {
   position: relative;
   top: 50%;
   transform: translateY(-150%);
+}
+
+button img {
+  vertical-align: middle;
 }
 
 footer {
