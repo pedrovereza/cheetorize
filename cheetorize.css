@@ -7,10 +7,16 @@ main {
   margin: 0 auto;
 }
 
+header {
+  margin: 0 auto;
+  color: rgb(238, 162, 162);
+}
+
 textarea {
-  background-color: #e0e0e0;
+  background-color: rgb(239, 235, 220);
   border: 0;
   border-radius: .3em;
+  color: rgb(64, 71, 93);
   font-family: sans-serif;
   height: 7em;
   margin: .7em 0;
@@ -19,12 +25,12 @@ textarea {
 }
 
 button {
-  background-color: #e0e0e0;
+  background-color: rgb(239, 235, 220);
   border: 0;
   border-radius: .3em;
   line-height: 3.5em;
   width: 18%;
-
+  color: rgb(64, 71, 93);
   position: relative;
   top: 50%;
   transform: translateY(-150%);
@@ -35,7 +41,7 @@ button img {
 }
 
 footer {
-  color: #e0e0e0;
+  color: rgb(194, 189, 169);
   font-size: 80%;
   margin: 0 auto;
   max-width: 45em;
@@ -43,5 +49,7 @@ footer {
 }
 
 footer a {
-  color: #d0d0d0;
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(194, 189, 169);
 }
