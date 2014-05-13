@@ -1,1 +1,1 @@
-exclude: [test, deploy]
+exclude: [test, deploy, CNAME]
