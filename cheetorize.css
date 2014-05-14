@@ -32,8 +32,8 @@ button {
   width: 18%;
   color: rgb(64, 71, 93);
   position: relative;
-  top: 50%;
-  transform: translateY(-150%);
+  top: -4.5em;
+  margin: 0;
 }
 
 button img {
