@@ -75,7 +75,7 @@ var cheetorize = (function () {
 	function tweet(source) {
 		var baseUrl = "https://twitter.com/home/?status=";
 		var text = document.getElementById(source).value;
-		text += " (via cheetorize.me)"
+		text += " (via www.cheetorize.me)"
 
 		window.open(baseUrl + encodeURI(text), '_blank');
 	}
